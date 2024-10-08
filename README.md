@@ -55,7 +55,7 @@ PDFConverterWebView2/
 
 Once installed, the application launches a window with a web interface for the Flip2PDF service. Users can easily convert their files by navigating to the Flip2PDF site within the embedded WebView2 control.
 
-## developer comments
+## Developer Comments
 
 We were unable to activate the icon in the top bar of the application
 
