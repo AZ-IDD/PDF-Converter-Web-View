@@ -13,9 +13,10 @@
 ## Building the Project
 
 1. Open the `Installer.iss` 
-1. Cahnge the paramter `CodeFile` to you file path
-1. Run `Installer.iss` 
-1. After run `Installer.iss` you can find the install file on `PDFConverterWebView2/Installers`
+2. Cahnge the paramter `CodeFile` to you file path
+3. Cahnge the paramter `ThankYou` to your thank you page link 
+4. Run `Installer.iss` 
+5. After run `Installer.iss` you can find the install file on `PDFConverterWebView2/Installers`
 
 
 ## Installation
