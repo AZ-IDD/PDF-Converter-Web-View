@@ -18,20 +18,21 @@
 ## Building the Project
 
 1. Open the `Installer.iss` 
-2. Cahnge the paramter `CodeFile` to you file path
-3. Cahnge the paramter `ThankYou` to your thank you page link
-4. Cahnge the paramter `Affid`
-5. Cahnge the paramter `Subid`
-6. Run `Installer.iss` 
-7. After run `Installer.iss` you can find the install file on `PDFConverterWebView2/Installers`
+2. Change the parameter `CodeFile` at the top of the ISS file to the local path where the source code files are.
+3. Change the parameter `ThankYou` to your thank you page link.
+4. Change the parameter `Affid`.
+5. Change the parameter `Subid`.
+6. Run `Installer.iss`.
+7. After run `Installer.iss` you can find the install file (.exe) on `PDFConverterWebView2/Installers`.
 
 
 ## Installation
 
-1. Download the installer file from the `PDFConverterWebView2/Installers`
-2. Run the installer. (silent installation)
-3. The application will automatically launch after installation, or you can start it manually via the desktop shortcut.
-4. The file `PDFConverter` will be installed in folder `C:\`
+1. End users will get the exe file in the `PDFConverterWebView2/Installers` folder.
+2. Run the installer. (silent installation).
+3. The application will automatically launch after installation and a thank you page will be opened in a browser.
+4. Users will also be able to run the app at any time via a shortcut on their desktop.
+5. The file `PDFConverter` will be installed in folder `C:\`.
 
 ## Building the Project
 
