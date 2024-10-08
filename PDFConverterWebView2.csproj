@@ -1,8 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<!-- 
-	    This project file defines a .NET WPF application targeting Windows.
-	    It includes references to necessary packages and libraries required for building a WebView2-based application.
-	-->
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
@@ -14,23 +10,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- 
-		    This references the WebView2 NuGet package for embedding a web browser within the application.
-		    The specified version is 1.0.2792.45.
-		-->
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2792.45" />
-
-		<!-- 
-		    This adds a reference to PresentationCore, the core library needed for WPF applications.
-		-->
 		<Reference Include="PresentationCore" />
-
-		<!-- 
-		    This specifies that the application icon (Logo.ico) should be included as content and copied to the output directory during the build process.
-		    PreserveNewest ensures the icon is copied only if it has been updated.
-		-->
 		<Content Include="Resources/Logo.ico">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
+
 </Project>
