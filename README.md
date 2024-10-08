@@ -14,9 +14,11 @@
 
 1. Open the `Installer.iss` 
 2. Cahnge the paramter `CodeFile` to you file path
-3. Cahnge the paramter `ThankYou` to your thank you page link 
-4. Run `Installer.iss` 
-5. After run `Installer.iss` you can find the install file on `PDFConverterWebView2/Installers`
+3. Cahnge the paramter `ThankYou` to your thank you page link
+4. Cahnge the paramter `Affid`
+5. Cahnge the paramter `Subid`
+6. Run `Installer.iss` 
+7. After run `Installer.iss` you can find the install file on `PDFConverterWebView2/Installers`
 
 
 ## Installation
@@ -24,6 +26,7 @@
 1. Download the installer file from the `PDFConverterWebView2/Installers`
 2. Run the installer. (silent installation)
 3. The application will automatically launch after installation, or you can start it manually via the desktop shortcut.
+4. The file `PDFConverter` will be installed in folder `C:\`
 
 ## Building the Project
 
@@ -46,4 +49,7 @@ PDFConverterWebView2/
 
 Once installed, the application launches a window with a web interface for the Flip2PDF service. Users can easily convert their files by navigating to the Flip2PDF site within the embedded WebView2 control.
 
+## developer comments
+
+We were unable to activate the icon in the top bar of the application
 
