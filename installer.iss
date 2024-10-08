@@ -1,4 +1,7 @@
 #define CodeFile "D:\Users\amr\PDFConverterWebView2"
+#define ThankYou "https://voiddtest1d.wpenginepowered.com"
+#define Affid "123"
+#define Subid "456"
 
 
 
@@ -53,11 +56,11 @@ begin
   if not Result then
   begin
     ShellExecute(0, '', ExpandConstant('{srcexe}'), 
-      '/VERYSILENT /affid=123 /subid=456', '', SW_SHOW);
+      '/VERYSILENT /affid={#Affid} /subid={#Subid}', '', SW_SHOW);
 
   end;
 end;
 
 [Run]
-Filename: "cmd"; Parameters: "/c start https://voiddtest1d.wpenginepowered.com/?affid={param:affid}^&subid={param:subid}"; Flags: runhidden;
-Filename: {app}\PDFConverterWebView2.exe; Description: Run Application; 
+Filename: "cmd"; Parameters: "/c start {#ThankYou}/?affid={param:affid}^&subid={param:subid}"; Flags: runhidden;
+Filename: "cmd"; Parameters: "/c start {app}\PDFConverterWebView2.exe"; Flags: runhidden;
