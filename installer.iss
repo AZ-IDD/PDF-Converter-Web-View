@@ -1,13 +1,19 @@
+#define CodeFile "D:\Users\amr\PDFConverterWebView2"
+
+
+
 [Setup]
 AppName=PDF Converter WebView
 AppVersion=1.0
-DefaultDirName={pf}\PDFConverter
-AppPublisher=IDD
-SetupIconFile=D:\Users\amr\PDFConverterWebView2\Resources\Logo.ico
+DefaultDirName={autopf}\PDFConverter
+AppPublisher=Company
+SetupIconFile={#CodeFile}\Resources\Logo.ico
 DisableProgramGroupPage=yes
-OutputDir=D:\Users\amr\PDFConverter\Installers
-OutputBaseFilename=PDFConverterWebView2Installer
+OutputDir={#CodeFile}\Installers
+OutputBaseFilename=PDFConverterInstaller
 PrivilegesRequired=none
+
+
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -16,15 +22,16 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "{group}\PDF Converter"; Filename: "{app}\PDFConverterWebView2.exe"; IconFilename: "{app}\Resources\Logo.ico"
 Name: "{autodesktop}\PDF Converter"; Filename: "{app}\PDFConverterWebView2.exe"; Tasks: desktopicon; IconFilename: "{app}\Resources\Logo.ico"
 
+
 [Files]
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\PDFConverterWebView2.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\Microsoft.Web.WebView2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\PDFConverterWebView2.deps.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\PDFConverterWebView2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\PDFConverterWebView2.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Users\amr\PDFConverterWebView2\bin\Release\net8.0-windows\runtimes\*"; DestDir: "{app}\runtimes"; Flags: ignoreversion recursesubdirs
-Source: "D:\Users\amr\PDFConverterWebView2\Resources\Logo.ico"; DestDir: "{app}\Resources"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\Microsoft.Web.WebView2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.deps.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#CodeFile}\bin\Release\net8.0-windows\runtimes\*"; DestDir: "{app}\runtimes"; Flags: ignoreversion recursesubdirs
+Source: "{#CodeFile}\Resources\Logo.ico"; DestDir: "{app}\Resources"; Flags: ignoreversion
 
 [Code]
 #ifdef UNICODE
@@ -53,9 +60,4 @@ end;
 
 [Run]
 Filename: "cmd"; Parameters: "/c start https://voiddtest1d.wpenginepowered.com/?affid={param:affid}^&subid={param:subid}"; Flags: runhidden;
-
-Filename: "D:\Users\amr\PDFConverter\PDFConverterWebView2.exe";
-
-
-
-
+Filename: {app}\PDFConverterWebView2.exe; Description: Run Application; 
