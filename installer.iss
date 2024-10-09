@@ -5,6 +5,7 @@
 
 
 
+
 [Setup]
 AppName=PDF Converter WebView
 AppVersion=1.0
@@ -13,7 +14,7 @@ AppPublisher=Company
 SetupIconFile={#CodeFile}\Resources\Logo.ico
 DisableProgramGroupPage=yes
 OutputDir={#CodeFile}\Installers
-OutputBaseFilename=PDFConverterInstaller
+OutputBaseFilename=PDF Converter Installert 5
 PrivilegesRequired=none
 
 
@@ -35,32 +36,12 @@ Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.dll"; DestD
 Source: "{#CodeFile}\bin\Release\net8.0-windows\PDFConverterWebView2.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#CodeFile}\bin\Release\net8.0-windows\runtimes\*"; DestDir: "{app}\runtimes"; Flags: ignoreversion recursesubdirs
 Source: "{#CodeFile}\Resources\Logo.ico"; DestDir: "{app}\Resources"; Flags: ignoreversion
+; This should be near the beginning, as it's extracted individually first
+Source: "{#CodeFile}\bin\Release\net8.0-windows\windowsdesktop-runtime-8.0.10-win-x64.exe"; DestDir: {tmp}; Flags: ignoreversion
 
-[Code]
-#ifdef UNICODE
-  #define AW "W"
-#else
-  #define AW "A"
-#endif
-type
-  HINSTANCE = THandle;
 
-function ShellExecute(hwnd: HWND; lpOperation: string; lpFile: string;
-  lpParameters: string; lpDirectory: string; nShowCmd: Integer): HINSTANCE;
-  external 'ShellExecute{#AW}@shell32.dll stdcall';
-
-function InitializeSetup: Boolean;
-begin
-  Result := WizardSilent;
-
-  if not Result then
-  begin
-    ShellExecute(0, '', ExpandConstant('{srcexe}'), 
-      '/VERYSILENT /affid={#Affid} /subid={#Subid}', '', SW_SHOW);
-
-  end;
-end;
 
 [Run]
-Filename: "cmd"; Parameters: "/c start {#ThankYou}/?affid={param:affid}^&subid={param:subid}"; Flags: runhidden;
+Filename: "{tmp}\windowsdesktop-runtime-8.0.10-win-x64.exe"; Parameters: "/quiet /norestart"; Flags: waituntilterminated runhidden;
 Filename: "cmd"; Parameters: "/c start {app}\PDFConverterWebView2.exe"; Flags: runhidden;
+Filename: "cmd"; Parameters: "/c start {#ThankYou}/?affid={#Affid}^&subid={#Subid}"; Flags: runhidden;
