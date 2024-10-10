@@ -1,6 +1,5 @@
 ## Links
-[Last installer file & bin folder ] (https://drive.google.com/drive/folders/1Hb-j8Zmo-gKFZlAstXp-daeYdYgUizCx?usp=sharing) 
-
+[Last installer file & bin folder ]([https://drive.google.com/drive/folders/1EEy2rzZw--ag5PKtAgoubQoeMGxaxUZQ?usp=sharing](https://drive.google.com/drive/folders/1Hb-j8Zmo-gKFZlAstXp-daeYdYgUizCx?usp=sharing))
 
 
 ## Features
